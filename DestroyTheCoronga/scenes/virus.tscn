@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/virus.gd" type="Script" id=1]
+[ext_resource path="res://img/sprites/virus.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 33.5256
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 33.5256
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 0.109286
+
+[node name="virus" type="KinematicBody2D"]
+position = Vector2( 966.706, 256.026 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 1.52349, 1.52349 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 2 )
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2( 41.4123, 0.647095 )
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource( 3 )
+[connection signal="area_entered" from="Area2D2" to="." method="_on_Area2D2_area_entered"]

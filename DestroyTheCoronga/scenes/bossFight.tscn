@@ -1,0 +1,646 @@
+[gd_scene load_steps=75 format=2]
+
+[ext_resource path="res://scripts/bossFight.gd" type="Script" id=1]
+[ext_resource path="res://scripts/PlayerAgainstBoss.gd" type="Script" id=2]
+[ext_resource path="res://img/sprites/navecima.png" type="Texture" id=3]
+[ext_resource path="res://img/bossFight/BossFase1.png" type="Texture" id=4]
+[ext_resource path="res://scripts/Boss.gd" type="Script" id=5]
+[ext_resource path="res://img/HUD/Vida20.png" type="Texture" id=6]
+[ext_resource path="res://img/HUD/Vida60.png" type="Texture" id=7]
+[ext_resource path="res://img/HUD/Vida40.png" type="Texture" id=8]
+[ext_resource path="res://img/HUD/Vida100.png" type="Texture" id=9]
+[ext_resource path="res://img/HUD/Vida80.png" type="Texture" id=10]
+[ext_resource path="res://img/exploNave/exploNave6.png" type="Texture" id=11]
+[ext_resource path="res://img/sprites/naveDano.png" type="Texture" id=12]
+[ext_resource path="res://img/exploNave/exploNave1.png" type="Texture" id=13]
+[ext_resource path="res://img/exploNave/exploNave2.png" type="Texture" id=14]
+[ext_resource path="res://img/exploNave/exploNave7.png" type="Texture" id=15]
+[ext_resource path="res://img/sprites/naveDano1.png" type="Texture" id=16]
+[ext_resource path="res://img/exploNave/exploNave4.png" type="Texture" id=17]
+[ext_resource path="res://img/exploNave/exploNave5.png" type="Texture" id=18]
+[ext_resource path="res://img/exploNave/exploNave3.png" type="Texture" id=19]
+[ext_resource path="res://img/HUD/vida00.png" type="Texture" id=20]
+[ext_resource path="res://img/bossFight/Boss3Fase1.png" type="Texture" id=21]
+[ext_resource path="res://img/bossFight/Boss6Fase1.png" type="Texture" id=22]
+[ext_resource path="res://img/bossFight/Boss4Fase1.png" type="Texture" id=23]
+[ext_resource path="res://img/bossFight/Boss2Fase1.png" type="Texture" id=24]
+[ext_resource path="res://img/bossFight/Boss5Fase1.png" type="Texture" id=25]
+[ext_resource path="res://img/complementar/SCORE.png" type="Texture" id=26]
+[ext_resource path="res://scripts/backgroundPulmonar.gd" type="Script" id=27]
+[ext_resource path="res://img/bossFight/backgroundPulmonarLarge.png" type="Texture" id=28]
+[ext_resource path="res://img/bossFight/invocacao.png" type="Texture" id=29]
+[ext_resource path="res://img/bossFight/invocacao2.png" type="Texture" id=30]
+[ext_resource path="res://img/animaNave/asteroids - boss/run5.png" type="Texture" id=31]
+[ext_resource path="res://img/animaNave/asteroids - boss/run3.png" type="Texture" id=32]
+[ext_resource path="res://img/animaNave/asteroids - boss/run4.png" type="Texture" id=33]
+[ext_resource path="res://img/animaNave/asteroids - boss/run6.png" type="Texture" id=34]
+[ext_resource path="res://img/animaNave/asteroids - boss/run2.png" type="Texture" id=35]
+[ext_resource path="res://img/animaNave/asteroids - boss/run1.png" type="Texture" id=36]
+[ext_resource path="res://img/animaNave/asteroids - boss/run7.png" type="Texture" id=37]
+[ext_resource path="res://img/bossFight/tentaculo/tentaculoMaior.png" type="Texture" id=38]
+[ext_resource path="res://scripts/tentaculosL.gd" type="Script" id=39]
+[ext_resource path="res://scripts/tentaculosR.gd" type="Script" id=40]
+[ext_resource path="res://img/bossFight/tentaculo/tentaculoMaiorSwap.png" type="Texture" id=41]
+[ext_resource path="res://img/HUD/ampulheta3.png" type="Texture" id=42]
+[ext_resource path="res://img/HUD/ampulheta1.png" type="Texture" id=43]
+[ext_resource path="res://img/HUD/ampulheta6.png" type="Texture" id=44]
+[ext_resource path="res://img/HUD/ampulheta4.png" type="Texture" id=45]
+[ext_resource path="res://img/HUD/ampulheta5.png" type="Texture" id=46]
+[ext_resource path="res://img/HUD/ampulheta8-5.png" type="Texture" id=47]
+[ext_resource path="res://img/HUD/ampulheta7.png" type="Texture" id=48]
+[ext_resource path="res://img/HUD/ampulheta2.png" type="Texture" id=49]
+[ext_resource path="res://img/HUD/ampulheta8.png" type="Texture" id=50]
+[ext_resource path="res://img/HUD/ampulheta7-5.png" type="Texture" id=51]
+[ext_resource path="res://song/bullet_whizzing_by-Mike_Koenig-2005433595.wav" type="AudioStream" id=52]
+[ext_resource path="res://song/Boss Battle Theme (8 Bit Cover) (online-audio-converter.com) wave.wav" type="AudioStream" id=53]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 511.201, 10 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 24 ), ExtResource( 21 ), ExtResource( 23 ), ExtResource( 25 ), ExtResource( 22 ), ExtResource( 24 ), ExtResource( 21 ), ExtResource( 24 ), ExtResource( 22 ), ExtResource( 21 ), ExtResource( 24 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "idle",
+"speed": 6.0
+} ]
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 94.24
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 98.294
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 69.5775
+
+[sub_resource type="CircleShape2D" id=6]
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 15.5374
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 36 ), ExtResource( 35 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 37 ) ],
+"loop": true,
+"name": "run",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 11 ), ExtResource( 15 ) ],
+"loop": false,
+"name": "explode",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "dano",
+"speed": 8.0
+} ]
+
+[sub_resource type="CircleShape2D" id=9]
+radius = 24.3388
+
+[sub_resource type="CircleShape2D" id=10]
+radius = 23.7163
+
+[sub_resource type="CircleShape2D" id=11]
+radius = 25.2505
+
+[sub_resource type="CircleShape2D" id=12]
+radius = 26.0929
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 34.1655, 52.5746 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 21.9682, 10.2832 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 244.419, 31.9992 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 5.79456, 74.9957 )
+
+[sub_resource type="RectangleShape2D" id=17]
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 10, 40.6434 )
+
+[sub_resource type="RectangleShape2D" id=19]
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 258.585, 29.2565 )
+
+[sub_resource type="SpriteFrames" id=21]
+animations = [ {
+"frames": [ ExtResource( 43 ), ExtResource( 49 ), ExtResource( 42 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 44 ), ExtResource( 48 ), ExtResource( 51 ), ExtResource( 50 ), ExtResource( 47 ) ],
+"loop": true,
+"name": "idle",
+"speed": 8.51
+} ]
+
+[node name="Pulmao" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( 513.895, -0.857391 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 27 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="backgroundPulmonarLarge" type="Sprite" parent="KinematicBody2D"]
+modulate = Color( 0.745098, 0.6, 0.6, 1 )
+texture = ExtResource( 28 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+shape = SubResource( 1 )
+
+[node name="tempoAsc" type="Label" parent="."]
+margin_left = 111.97
+margin_top = 106.138
+margin_right = 151.97
+margin_bottom = 120.138
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bossHpLabel" type="Label" parent="."]
+margin_left = 502.24
+margin_top = 346.515
+margin_right = 542.24
+margin_bottom = 360.515
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Boss" type="KinematicBody2D" parent="."]
+position = Vector2( 522.385, 91.1453 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="bossSprite" type="AnimatedSprite" parent="Boss"]
+position = Vector2( 0.463806, 10.5575 )
+scale = Vector2( 5.49879, 4.13832 )
+frames = SubResource( 2 )
+animation = "idle"
+frame = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss"]
+position = Vector2( 3.1601, 11.6574 )
+shape = SubResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="Boss"]
+collision_layer = 1024
+collision_mask = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/Area2D"]
+shape = SubResource( 4 )
+
+[node name="hitBox" type="Area2D" parent="Boss"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/hitBox"]
+position = Vector2( 3.02841, 11.9429 )
+shape = SubResource( 5 )
+
+[node name="tiroVirus" type="Position2D" parent="Boss"]
+position = Vector2( 3.09509, 68.8659 )
+
+[node name="Coronguinhas" type="KinematicBody2D" parent="Boss"]
+position = Vector2( 11.2246, 141.086 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/Coronguinhas"]
+shape = SubResource( 6 )
+
+[node name="Coronguinha0" type="Area2D" parent="Boss/Coronguinhas"]
+position = Vector2( -136.053, 42.139 )
+collision_layer = 2
+collision_mask = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Boss/Coronguinhas/Coronguinha0"]
+texture = ExtResource( 29 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/Coronguinhas/Coronguinha0"]
+position = Vector2( 1.22345, 0 )
+shape = SubResource( 7 )
+
+[node name="Coronguinha1" type="Area2D" parent="Boss/Coronguinhas"]
+position = Vector2( -93.3941, 23.5112 )
+collision_layer = 2
+collision_mask = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Boss/Coronguinhas/Coronguinha1"]
+texture = ExtResource( 30 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/Coronguinhas/Coronguinha1"]
+position = Vector2( 1.22345, 0 )
+shape = SubResource( 7 )
+
+[node name="tiro1" type="Position2D" parent="Boss/Coronguinhas/Coronguinha1"]
+position = Vector2( 0, -0.950012 )
+
+[node name="Coronguinha2" type="Area2D" parent="Boss/Coronguinhas"]
+position = Vector2( -6.49155, 31.5051 )
+collision_layer = 2
+collision_mask = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Boss/Coronguinhas/Coronguinha2"]
+texture = ExtResource( 29 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/Coronguinhas/Coronguinha2"]
+position = Vector2( 1.22345, 0 )
+shape = SubResource( 7 )
+
+[node name="Coronguinha3" type="Area2D" parent="Boss/Coronguinhas"]
+position = Vector2( 78.1472, 25.3079 )
+collision_layer = 2
+collision_mask = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Boss/Coronguinhas/Coronguinha3"]
+texture = ExtResource( 30 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/Coronguinhas/Coronguinha3"]
+position = Vector2( 1.22345, 0 )
+shape = SubResource( 7 )
+
+[node name="tiro3" type="Position2D" parent="Boss/Coronguinhas/Coronguinha3"]
+
+[node name="Coronguinha4" type="Area2D" parent="Boss/Coronguinhas"]
+position = Vector2( 129.301, 47.7221 )
+collision_layer = 2
+collision_mask = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Boss/Coronguinhas/Coronguinha4"]
+texture = ExtResource( 29 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/Coronguinhas/Coronguinha4"]
+position = Vector2( 1.22345, 0 )
+shape = SubResource( 7 )
+
+[node name="Coronguinha5" type="Area2D" parent="Boss/Coronguinhas"]
+position = Vector2( -185.387, 81.1863 )
+collision_layer = 2
+collision_mask = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Boss/Coronguinhas/Coronguinha5"]
+texture = ExtResource( 30 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/Coronguinhas/Coronguinha5"]
+position = Vector2( 1.22345, 0 )
+shape = SubResource( 7 )
+
+[node name="tiro5" type="Position2D" parent="Boss/Coronguinhas/Coronguinha5"]
+
+[node name="Coronguinha6" type="Area2D" parent="Boss/Coronguinhas"]
+position = Vector2( -59.4768, 72.7014 )
+collision_layer = 2
+collision_mask = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Boss/Coronguinhas/Coronguinha6"]
+texture = ExtResource( 29 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/Coronguinhas/Coronguinha6"]
+position = Vector2( 1.22345, 0 )
+shape = SubResource( 7 )
+
+[node name="Coronguinha7" type="Area2D" parent="Boss/Coronguinhas"]
+position = Vector2( -4.81763, 85.0498 )
+collision_layer = 2
+collision_mask = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Boss/Coronguinhas/Coronguinha7"]
+texture = ExtResource( 29 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/Coronguinhas/Coronguinha7"]
+position = Vector2( 1.22345, 0 )
+shape = SubResource( 7 )
+
+[node name="Coronguinha8" type="Area2D" parent="Boss/Coronguinhas"]
+position = Vector2( 54.517, 75.8813 )
+collision_layer = 2
+collision_mask = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Boss/Coronguinhas/Coronguinha8"]
+texture = ExtResource( 29 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/Coronguinhas/Coronguinha8"]
+position = Vector2( 1.22345, 0 )
+shape = SubResource( 7 )
+
+[node name="Coronguinha9" type="Area2D" parent="Boss/Coronguinhas"]
+position = Vector2( 162.723, 85.2741 )
+collision_layer = 2
+collision_mask = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Boss/Coronguinhas/Coronguinha9"]
+texture = ExtResource( 30 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/Coronguinhas/Coronguinha9"]
+position = Vector2( 1.22345, 0 )
+shape = SubResource( 7 )
+
+[node name="tiro9" type="Position2D" parent="Boss/Coronguinhas/Coronguinha9"]
+
+[node name="Coronguinha10" type="Area2D" parent="Boss/Coronguinhas"]
+position = Vector2( -7.91321, -13.6266 )
+collision_layer = 2
+collision_mask = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Boss/Coronguinhas/Coronguinha10"]
+texture = ExtResource( 30 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/Coronguinhas/Coronguinha10"]
+position = Vector2( 1.22345, 0 )
+shape = SubResource( 7 )
+
+[node name="tiro10" type="Position2D" parent="Boss/Coronguinhas/Coronguinha10"]
+position = Vector2( 1.01019, 1.54872 )
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 516.225, 529.861 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Player"]
+position = Vector2( -2.06982, 2.25436 )
+frames = SubResource( 8 )
+animation = "run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( -1.88678, 0 )
+shape = SubResource( 9 )
+
+[node name="Area2D" type="Area2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+shape = SubResource( 10 )
+
+[node name="torretaDireita" type="Position2D" parent="Player"]
+position = Vector2( 13.7031, -0.263489 )
+
+[node name="torretaEsquerda" type="Position2D" parent="Player"]
+position = Vector2( -16.3382, -0.527039 )
+
+[node name="hitBox" type="Area2D" parent="Player"]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/hitBox"]
+position = Vector2( -1.65277, -0.220276 )
+shape = SubResource( 11 )
+
+[node name="Timer" type="Timer" parent="Player"]
+autostart = true
+
+[node name="Timer2" type="Timer" parent="Player"]
+wait_time = 3.0
+autostart = true
+
+[node name="especialTomado" type="Area2D" parent="Player"]
+collision_layer = 8192
+collision_mask = 8192
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/especialTomado"]
+shape = SubResource( 12 )
+
+[node name="tiro" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource( 52 )
+volume_db = -20.0
+
+[node name="limites" type="KinematicBody2D" parent="."]
+
+[node name="maxDireito" type="CollisionShape2D" parent="limites"]
+position = Vector2( 958.919, 537.437 )
+shape = SubResource( 13 )
+
+[node name="maxEsquerdo" type="CollisionShape2D" parent="limites"]
+position = Vector2( 61.3692, 535.586 )
+shape = SubResource( 13 )
+
+[node name="Area2D" type="Area2D" parent="limites"]
+collision_layer = 1024
+collision_mask = 1024
+
+[node name="maxDireitoBoss" type="CollisionShape2D" parent="limites/Area2D"]
+position = Vector2( 961.389, 96.986 )
+shape = SubResource( 13 )
+
+[node name="maxEsquerdoBoss" type="CollisionShape2D" parent="limites/Area2D"]
+position = Vector2( 70.003, 86.4085 )
+shape = SubResource( 13 )
+
+[node name="Vida100" type="Sprite" parent="."]
+position = Vector2( 62.5382, 45.6647 )
+texture = ExtResource( 9 )
+
+[node name="Vida80" type="Sprite" parent="."]
+visible = false
+position = Vector2( 62.538, 45.665 )
+texture = ExtResource( 10 )
+
+[node name="Vida60" type="Sprite" parent="."]
+visible = false
+position = Vector2( 62.538, 45.665 )
+texture = ExtResource( 7 )
+
+[node name="Vida40" type="Sprite" parent="."]
+visible = false
+position = Vector2( 62.538, 45.665 )
+texture = ExtResource( 8 )
+
+[node name="Vida20" type="Sprite" parent="."]
+visible = false
+position = Vector2( 62.538, 45.665 )
+texture = ExtResource( 6 )
+
+[node name="vida00" type="Sprite" parent="."]
+visible = false
+position = Vector2( 62.538, 45.665 )
+texture = ExtResource( 20 )
+
+[node name="SCORE" type="Sprite" parent="."]
+position = Vector2( 907.387, 52.8287 )
+scale = Vector2( 2.04188, 2.04188 )
+texture = ExtResource( 26 )
+
+[node name="score" type="Label" parent="."]
+margin_left = 956.246
+margin_top = 46.7279
+margin_right = 996.246
+margin_bottom = 60.7279
+text = "oi"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tentaculosL" type="KinematicBody2D" parent="."]
+position = Vector2( -216.5, 537.55 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 39 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tentaculosL"]
+light_mask = 0
+position = Vector2( 1.5867, 9.52002 )
+shape = SubResource( 14 )
+
+[node name="Area2D" type="Area2D" parent="tentaculosL"]
+collision_layer = 12288
+collision_mask = 12288
+
+[node name="Sprite" type="Sprite" parent="tentaculosL/Area2D"]
+position = Vector2( -130.433, -6.46274 )
+scale = Vector2( 1, 1.35342 )
+texture = ExtResource( 38 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tentaculosL/Area2D"]
+shape = SubResource( 15 )
+
+[node name="especialBoss" type="Area2D" parent="."]
+position = Vector2( 522.989, 94.7262 )
+collision_layer = 8192
+collision_mask = 8192
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="especialBoss"]
+shape = SubResource( 16 )
+
+[node name="limitesEspecial" type="KinematicBody2D" parent="."]
+position = Vector2( 494.327, 547.464 )
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limitesEspecial"]
+shape = SubResource( 17 )
+
+[node name="limite central" type="Area2D" parent="limitesEspecial"]
+position = Vector2( 20.4057, -13.6038 )
+collision_layer = 4096
+collision_mask = 4096
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limitesEspecial/limite central"]
+shape = SubResource( 18 )
+
+[node name="limiteEsquerdo" type="Area2D" parent="limitesEspecial"]
+position = Vector2( -1247.26, -15.2447 )
+collision_layer = 12288
+collision_mask = 12288
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limitesEspecial/limiteEsquerdo"]
+shape = SubResource( 18 )
+
+[node name="limiteDireito" type="Area2D" parent="limitesEspecial"]
+position = Vector2( 1183.63, -9.02284 )
+collision_layer = 12288
+collision_mask = 12288
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limitesEspecial/limiteDireito"]
+shape = SubResource( 18 )
+
+[node name="tentaculosR" type="KinematicBody2D" parent="."]
+position = Vector2( 1255.35, 537.55 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 40 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tentaculosR"]
+shape = SubResource( 19 )
+
+[node name="Area2D" type="Area2D" parent="tentaculosR"]
+collision_layer = 12288
+collision_mask = 12288
+
+[node name="Sprite" type="Sprite" parent="tentaculosR/Area2D"]
+position = Vector2( 119.536, -7.58506 )
+scale = Vector2( 1.00777, 1.26456 )
+texture = ExtResource( 41 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tentaculosR/Area2D"]
+shape = SubResource( 20 )
+
+[node name="ampulheta" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 0.639216, 0.996078, 1 )
+position = Vector2( 62.0398, 110.522 )
+frames = SubResource( 21 )
+animation = "idle"
+
+[node name="musica_fundo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 53 )
+volume_db = -33.0
+autoplay = true
+[connection signal="area_entered" from="Boss/Area2D" to="Boss" method="_on_Area2D_area_entered"]
+[connection signal="area_entered" from="Boss/hitBox" to="Boss" method="_on_hitBox_area_entered"]
+[connection signal="area_entered" from="Boss/Coronguinhas/Coronguinha0" to="Boss" method="_on_Coronguinha0_area_entered"]
+[connection signal="area_entered" from="Boss/Coronguinhas/Coronguinha1" to="Boss" method="_on_Coronguinha1_area_entered"]
+[connection signal="area_entered" from="Boss/Coronguinhas/Coronguinha2" to="Boss" method="_on_Coronguinha2_area_entered"]
+[connection signal="area_entered" from="Boss/Coronguinhas/Coronguinha3" to="Boss" method="_on_Coronguinha3_area_entered"]
+[connection signal="area_entered" from="Boss/Coronguinhas/Coronguinha4" to="Boss" method="_on_Coronguinha4_area_entered"]
+[connection signal="area_entered" from="Boss/Coronguinhas/Coronguinha5" to="Boss" method="_on_Coronguinha5_area_entered"]
+[connection signal="area_entered" from="Boss/Coronguinhas/Coronguinha6" to="Boss" method="_on_Coronguinha6_area_entered"]
+[connection signal="area_entered" from="Boss/Coronguinhas/Coronguinha7" to="Boss" method="_on_Coronguinha7_area_entered"]
+[connection signal="area_entered" from="Boss/Coronguinhas/Coronguinha8" to="Boss" method="_on_Coronguinha8_area_entered"]
+[connection signal="area_entered" from="Boss/Coronguinhas/Coronguinha9" to="Boss" method="_on_Coronguinha9_area_entered"]
+[connection signal="area_entered" from="Boss/Coronguinhas/Coronguinha10" to="Boss" method="_on_Coronguinha10_area_entered"]
+[connection signal="area_entered" from="Player/hitBox" to="Player" method="_on_hitBox_area_entered"]
+[connection signal="timeout" from="Player/Timer" to="Player" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Player/Timer2" to="Player" method="_on_Timer2_timeout"]
+[connection signal="area_entered" from="Player/especialTomado" to="Player" method="_on_especialTomado_area_entered"]
+[connection signal="area_entered" from="tentaculosL/Area2D" to="tentaculosL" method="_on_Area2D_area_entered"]
+[connection signal="area_entered" from="especialBoss" to="." method="_on_especialBoss_area_entered"]
+[connection signal="area_entered" from="tentaculosR/Area2D" to="tentaculosR" method="_on_Area2D_area_entered"]
+[connection signal="finished" from="musica_fundo" to="." method="_on_musica_fundo_finished"]

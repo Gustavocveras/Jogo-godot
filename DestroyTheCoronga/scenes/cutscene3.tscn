@@ -1,0 +1,23 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://img/cutscene2/cutscene3/10DBWcutscene2fase3.png" type="Texture" id=1]
+[ext_resource path="res://img/cutscene2/cutscene3/9DBWcutscene2fase3.png" type="Texture" id=2]
+[ext_resource path="res://img/cutscene2/cutscene3/11DBWcutscene2fase3.png" type="Texture" id=3]
+[ext_resource path="res://img/cutscene2/cutscene3/8DBWcutscene2fase3.png" type="Texture" id=4]
+[ext_resource path="res://scripts/cutscene2pt2.gd" type="Script" id=9]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "cutscene2pt2",
+"speed": 0.15
+} ]
+
+[node name="cutscene2pt2" type="AnimatedSprite"]
+position = Vector2( 512.179, 299.542 )
+scale = Vector2( 5.12574, 6.01848 )
+frames = SubResource( 1 )
+animation = "cutscene2pt2"
+script = ExtResource( 9 )
+[connection signal="animation_finished" from="." to="." method="_on_cutscene2pt2_animation_finished"]

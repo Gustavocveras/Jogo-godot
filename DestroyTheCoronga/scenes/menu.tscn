@@ -1,0 +1,201 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://scripts/exit.gd" type="Script" id=1]
+[ext_resource path="res://fontes/ARCADECLASSIC.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://song/menu.wav" type="AudioStream" id=3]
+[ext_resource path="res://scripts/newGame.gd" type="Script" id=8]
+[ext_resource path="res://song/Punch_03.wav" type="AudioStream" id=9]
+[ext_resource path="res://scripts/score.gd" type="Script" id=10]
+[ext_resource path="res://scripts/menu.gd" type="Script" id=13]
+
+[sub_resource type="StyleBoxLine" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 35
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxLine" id=3]
+
+[sub_resource type="DynamicFont" id=4]
+size = 35
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 35
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxLine" id=6]
+
+[sub_resource type="DynamicFont" id=7]
+size = 35
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 80
+font_data = ExtResource( 2 )
+
+[node name="menu" type="Node2D"]
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_vertical_guides_": [ 513.328 ]
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -36.5705
+margin_top = -23.5152
+margin_right = 1069.43
+margin_bottom = 624.485
+color = Color( 0.0509804, 0.00784314, 0.0705882, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="start" type="Button" parent="."]
+margin_left = 459.947
+margin_top = 297.676
+margin_right = 566.947
+margin_bottom = 339.676
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_styles/hover = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
+enabled_focus_mode = 0
+text = "jogar"
+flat = true
+expand_icon = true
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HTTPRequest" type="HTTPRequest" parent="start"]
+
+[node name="fxSong" type="AudioStreamPlayer2D" parent="start"]
+position = Vector2( 77.8541, -3.97214 )
+stream = ExtResource( 9 )
+volume_db = -33.0
+
+[node name="ranking_geral" type="Button" parent="."]
+margin_left = 401.321
+margin_top = 345.1
+margin_right = 626.321
+margin_bottom = 387.1
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_styles/hover = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+enabled_focus_mode = 0
+text = "Placar Geral"
+flat = true
+expand_icon = true
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fxSong" type="AudioStreamPlayer2D" parent="ranking_geral"]
+position = Vector2( 110, 0 )
+stream = ExtResource( 9 )
+volume_db = -33.0
+
+[node name="logout" type="Button" parent="."]
+margin_left = 451.0
+margin_top = 438.0
+margin_right = 577.0
+margin_bottom = 480.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_styles/hover = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
+enabled_focus_mode = 0
+text = "logout"
+flat = true
+expand_icon = true
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fxSong" type="AudioStreamPlayer2D" parent="logout"]
+position = Vector2( 100, -77.599 )
+stream = ExtResource( 9 )
+volume_db = -33.0
+
+[node name="exit" type="Button" parent="."]
+margin_left = 469.972
+margin_top = 482.0
+margin_right = 557.972
+margin_bottom = 524.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_styles/hover = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
+enabled_focus_mode = 0
+text = "sair"
+flat = true
+expand_icon = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fxSong" type="AudioStreamPlayer2D" parent="exit"]
+position = Vector2( 43.2313, -151.736 )
+stream = ExtResource( 9 )
+volume_db = -33.0
+
+[node name="help" type="Button" parent="."]
+margin_left = 460.0
+margin_top = 390.927
+margin_right = 567.0
+margin_bottom = 432.927
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_styles/hover = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
+enabled_focus_mode = 0
+text = "ajuda"
+flat = true
+expand_icon = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fxSong" type="AudioStreamPlayer2D" parent="help"]
+position = Vector2( 43.2313, -151.736 )
+stream = ExtResource( 9 )
+volume_db = -33.0
+
+[node name="musica" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 526.524, 355.613 )
+stream = ExtResource( 3 )
+volume_db = -33.0
+autoplay = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 127.0
+margin_top = 21.7076
+margin_right = 898.0
+margin_bottom = 256.708
+custom_fonts/font = SubResource( 8 )
+text = "Destroy
+The
+Coronga"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="mouse_entered" from="start" to="start" method="_on_newGame_mouse_entered"]
+[connection signal="pressed" from="start" to="start" method="_on_newGame_pressed"]
+[connection signal="request_completed" from="start/HTTPRequest" to="start" method="_on_HTTPRequest_request_completed"]
+[connection signal="mouse_entered" from="ranking_geral" to="ranking_geral" method="_on_score_mouse_entered"]
+[connection signal="pressed" from="ranking_geral" to="." method="_on_ranking_geral_pressed"]
+[connection signal="mouse_entered" from="logout" to="logout" method="_on_score_mouse_entered"]
+[connection signal="pressed" from="logout" to="." method="_on_logout_pressed"]
+[connection signal="mouse_entered" from="exit" to="exit" method="_on_exit_mouse_entered"]
+[connection signal="pressed" from="exit" to="exit" method="_on_exit_pressed"]
+[connection signal="mouse_entered" from="help" to="help" method="_on_exit_mouse_entered"]
+[connection signal="pressed" from="help" to="." method="_on_help_pressed"]
+[connection signal="finished" from="musica" to="." method="_on_musica_finished"]

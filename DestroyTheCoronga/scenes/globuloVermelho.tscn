@@ -1,0 +1,20 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://img/sprites/gv4.png" type="Texture" id=1]
+[ext_resource path="res://img/sprites/gv3.png" type="Texture" id=2]
+[ext_resource path="res://img/sprites/gv2.png" type="Texture" id=3]
+[ext_resource path="res://img/sprites/gv1.png" type="Texture" id=4]
+[ext_resource path="res://img/sprites/gv5.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
+[node name="globuloVermelho" type="Node2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )

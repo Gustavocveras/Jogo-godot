@@ -1,0 +1,183 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://img/bossFight/olhoES.png" type="Texture" id=1]
+[ext_resource path="res://scripts/BossFinal.gd" type="Script" id=2]
+[ext_resource path="res://img/bossFight/BossFase2.png" type="Texture" id=3]
+[ext_resource path="res://img/bossFight/olhoDS.png" type="Texture" id=4]
+[ext_resource path="res://img/bossFight/OlhoCI.png" type="Texture" id=5]
+[ext_resource path="res://img/bossFight/Boss2Fase2.png" type="Texture" id=6]
+[ext_resource path="res://img/bossFight/Boss1Fase2.png" type="Texture" id=7]
+[ext_resource path="res://img/bossFight/Boss3Fase2.png" type="Texture" id=8]
+[ext_resource path="res://img/bossFight/olhoDS3.png" type="Texture" id=9]
+[ext_resource path="res://img/bossFight/olhoDS1.png" type="Texture" id=10]
+[ext_resource path="res://img/bossFight/olhoES1.png" type="Texture" id=11]
+[ext_resource path="res://img/bossFight/olhoDS2.png" type="Texture" id=12]
+[ext_resource path="res://img/bossFight/OlhoCI1.png" type="Texture" id=13]
+[ext_resource path="res://img/bossFight/OlhoCI3.png" type="Texture" id=14]
+[ext_resource path="res://img/bossFight/olhoES3.png" type="Texture" id=15]
+[ext_resource path="res://img/bossFight/olhoES2.png" type="Texture" id=16]
+[ext_resource path="res://img/bossFight/OlhoCI2.png" type="Texture" id=17]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "idle",
+"speed": 7.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 30.3489
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 30.6376
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 13 ), ExtResource( 17 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "idle",
+"speed": 8.0
+} ]
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 14.6474
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "idle",
+"speed": 8.0
+} ]
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 14.0323
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 11 ), ExtResource( 16 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "idle",
+"speed": 8.0
+} ]
+
+[sub_resource type="CircleShape2D" id=9]
+radius = 12.835
+
+[sub_resource type="CircleShape2D" id=10]
+radius = 38.3678
+
+[sub_resource type="CircleShape2D" id=11]
+radius = 18.6867
+
+[node name="BossFinalScene" type="Node2D"]
+
+[node name="BossFinal" type="KinematicBody2D" parent="."]
+position = Vector2( 519.027, 111.847 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="AnimatedSprite" parent="BossFinal"]
+scale = Vector2( 3.19154, 3.04551 )
+frames = SubResource( 1 )
+animation = "idle"
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossFinal"]
+visible = false
+shape = SubResource( 2 )
+
+[node name="corpoPrincipal" type="Area2D" parent="BossFinal"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossFinal/corpoPrincipal"]
+visible = false
+shape = SubResource( 3 )
+
+[node name="OlhoCI" type="Area2D" parent="BossFinal"]
+position = Vector2( 5.66031, 57.7352 )
+collision_layer = 2
+collision_mask = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="BossFinal/OlhoCI"]
+scale = Vector2( 1.61445, 1.39967 )
+frames = SubResource( 4 )
+animation = "idle"
+frame = 2
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossFinal/OlhoCI"]
+visible = false
+shape = SubResource( 5 )
+
+[node name="CiTiro" type="Position2D" parent="BossFinal/OlhoCI"]
+
+[node name="OlhoDS" type="Area2D" parent="BossFinal"]
+position = Vector2( 67.9237, -41.5089 )
+collision_layer = 2
+collision_mask = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="BossFinal/OlhoDS"]
+scale = Vector2( 1.546, 1.34 )
+frames = SubResource( 6 )
+animation = "idle"
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossFinal/OlhoDS"]
+visible = false
+shape = SubResource( 7 )
+
+[node name="DsTiro" type="Position2D" parent="BossFinal/OlhoDS"]
+
+[node name="OlhoES" type="Area2D" parent="BossFinal"]
+position = Vector2( -58.1125, -42.641 )
+collision_layer = 2
+collision_mask = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="BossFinal/OlhoES"]
+scale = Vector2( 1.54614, 1.34045 )
+frames = SubResource( 8 )
+animation = "idle"
+frame = 2
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossFinal/OlhoES"]
+visible = false
+shape = SubResource( 9 )
+
+[node name="EsTiro" type="Position2D" parent="BossFinal/OlhoES"]
+
+[node name="Area2D" type="Area2D" parent="BossFinal"]
+collision_layer = 1024
+collision_mask = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossFinal/Area2D"]
+visible = false
+shape = SubResource( 10 )
+
+[node name="ativadorEspecial" type="Area2D" parent="BossFinal"]
+collision_layer = 8192
+collision_mask = 8192
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossFinal/ativadorEspecial"]
+shape = SubResource( 11 )
+
+[node name="boca" type="Position2D" parent="BossFinal"]
+[connection signal="area_entered" from="BossFinal/corpoPrincipal" to="BossFinal" method="_on_corpoPrincipal_area_entered"]
+[connection signal="area_entered" from="BossFinal/OlhoCI" to="BossFinal" method="_on_OlhoCI_area_entered"]
+[connection signal="area_entered" from="BossFinal/OlhoDS" to="BossFinal" method="_on_OlhoDS_area_entered"]
+[connection signal="area_entered" from="BossFinal/OlhoES" to="BossFinal" method="_on_OlhoES_area_entered"]
+[connection signal="area_entered" from="BossFinal/Area2D" to="BossFinal" method="_on_Area2D_area_entered"]
+[connection signal="area_entered" from="BossFinal/ativadorEspecial" to="BossFinal" method="_on_ativadorEspecial_area_entered"]

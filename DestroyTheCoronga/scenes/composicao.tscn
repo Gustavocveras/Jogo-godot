@@ -1,0 +1,55 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://img/bossFight/tentaculo/transiçãoBoss/transicaoBoss14.png" type="Texture" id=1]
+[ext_resource path="res://img/bossFight/tentaculo/transiçãoBoss/transicaoBoss13.png" type="Texture" id=2]
+[ext_resource path="res://img/bossFight/tentaculo/transiçãoBoss/transicaoBoss11.png" type="Texture" id=3]
+[ext_resource path="res://img/bossFight/tentaculo/transiçãoBoss/transicaoBoss16.png" type="Texture" id=4]
+[ext_resource path="res://img/bossFight/tentaculo/transiçãoBoss/transicaoBoss12.png" type="Texture" id=5]
+[ext_resource path="res://img/bossFight/tentaculo/transiçãoBoss/transicaoBoss20.png" type="Texture" id=6]
+[ext_resource path="res://img/bossFight/tentaculo/transiçãoBoss/transicaoBoss17.png" type="Texture" id=7]
+[ext_resource path="res://img/bossFight/tentaculo/transiçãoBoss/transicaoBoss19.png" type="Texture" id=8]
+[ext_resource path="res://img/bossFight/tentaculo/transiçãoBoss/transicaoBoss15.png" type="Texture" id=9]
+[ext_resource path="res://img/bossFight/tentaculo/transiçãoBoss/transicaoBoss18.png" type="Texture" id=10]
+[ext_resource path="res://scripts/composicao.gd" type="Script" id=11]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[sub_resource type="CircleShape2D" id=2]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 9 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 3 ) ],
+"loop": false,
+"name": "composicao",
+"speed": 10.0
+} ]
+
+[node name="composicao" type="KinematicBody2D"]
+position = Vector2( 501.191, 114.558 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 3.08511, 3.08511 )
+frames = SubResource( 3 )
+animation = "composicao"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.12
+one_shot = true
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

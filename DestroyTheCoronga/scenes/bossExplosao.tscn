@@ -1,0 +1,32 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://scripts/bossExplosao.gd" type="Script" id=1]
+[ext_resource path="res://img/bossFight/bossExplosao/BossFase2.png" type="Texture" id=2]
+[ext_resource path="res://img/bossFight/bossExplosao/BossFase3.png" type="Texture" id=3]
+[ext_resource path="res://img/bossFight/bossExplosao/BossFase5.png" type="Texture" id=4]
+[ext_resource path="res://img/bossFight/bossExplosao/BossFase7.png" type="Texture" id=5]
+[ext_resource path="res://img/bossFight/bossExplosao/BossFase10.png" type="Texture" id=6]
+[ext_resource path="res://img/bossFight/bossExplosao/BossFase6.png" type="Texture" id=7]
+[ext_resource path="res://img/bossFight/bossExplosao/BossFase11.png" type="Texture" id=8]
+[ext_resource path="res://img/bossFight/bossExplosao/BossFase12.png" type="Texture" id=9]
+[ext_resource path="res://img/bossFight/bossExplosao/BossFase4.png" type="Texture" id=10]
+[ext_resource path="res://img/bossFight/bossExplosao/BossFase9.png" type="Texture" id=11]
+[ext_resource path="res://img/bossFight/bossExplosao/BossFase8.png" type="Texture" id=12]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "explosao",
+"speed": 8.5
+} ]
+
+[node name="bossExplosao" type="AnimatedSprite"]
+position = Vector2( 481.673, 174.567 )
+scale = Vector2( 3.192, 3.046 )
+frames = SubResource( 1 )
+animation = "explosao"
+frame = 8
+playing = true
+script = ExtResource( 1 )
+[connection signal="animation_finished" from="." to="." method="_on_bossExplosao_animation_finished"]

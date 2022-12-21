@@ -1,0 +1,45 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://img/cutscene2/cutscene2/0DBWcutscene2.png" type="Texture" id=1]
+[ext_resource path="res://img/cutscene2/cutscene2/3DBWcutscene2fase2.png" type="Texture" id=2]
+[ext_resource path="res://img/cutscene2/cutscene2/7DBWcutscene2fase2.png" type="Texture" id=3]
+[ext_resource path="res://img/cutscene2/cutscene2/5DBWcutscene2fase2.png" type="Texture" id=4]
+[ext_resource path="res://img/cutscene2/cutscene2/1DBWcutscene2fase1.png" type="Texture" id=5]
+[ext_resource path="res://scripts/cutscene2pt1.gd" type="Script" id=6]
+[ext_resource path="res://scripts/skip.gd" type="Script" id=7]
+[ext_resource path="res://img/cutscene2/cutscene2/2DBWcutscene2fase1.png" type="Texture" id=8]
+[ext_resource path="res://img/cutscene2/cutscene2/6DBWcutscene2fase2.png" type="Texture" id=9]
+[ext_resource path="res://img/cutscene2/cutscene2/4DBWcutscene2fase2.png" type="Texture" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 3 ) ],
+"loop": false,
+"name": "cutscene2pt1",
+"speed": 0.15
+} ]
+
+[node name="cutscene2" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="cutscene2pt1" type="AnimatedSprite" parent="."]
+position = Vector2( 511.973, 300.951 )
+scale = Vector2( 5.12, 6.00336 )
+frames = SubResource( 1 )
+animation = "cutscene2pt1"
+
+[node name="skip" type="Label" parent="."]
+margin_left = 886.427
+margin_top = 573.845
+margin_right = 1009.43
+margin_bottom = 587.845
+text = "press \"TAB\" to skip"
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="skip"]
+wait_time = 5.0
+[connection signal="animation_finished" from="cutscene2pt1" to="." method="_on_cutscene2pt1_animation_finished"]
+[connection signal="timeout" from="skip/Timer" to="skip" method="_on_Timer_timeout"]

@@ -1,0 +1,141 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://scenes/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/gbSpawner .tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/vdSpawner.tscn" type="PackedScene" id=3]
+[ext_resource path="res://img/complementar/bg.png" type="Texture" id=4]
+[ext_resource path="res://scripts/asteroids.gd" type="Script" id=5]
+[ext_resource path="res://img/HUD/Vida100.png" type="Texture" id=6]
+[ext_resource path="res://img/HUD/GlobuloHUD.png" type="Texture" id=7]
+[ext_resource path="res://img/HUD/ampulheta3.png" type="Texture" id=8]
+[ext_resource path="res://img/HUD/Vida40.png" type="Texture" id=9]
+[ext_resource path="res://img/HUD/Vida80.png" type="Texture" id=10]
+[ext_resource path="res://img/HUD/Vida60.png" type="Texture" id=11]
+[ext_resource path="res://img/HUD/Vida20.png" type="Texture" id=12]
+[ext_resource path="res://scripts/comunicacao.gd" type="Script" id=13]
+[ext_resource path="res://img/HUD/ampulheta6.png" type="Texture" id=14]
+[ext_resource path="res://img/HUD/ampulheta1.png" type="Texture" id=15]
+[ext_resource path="res://img/HUD/ampulheta8.png" type="Texture" id=16]
+[ext_resource path="res://img/HUD/ampulheta7.png" type="Texture" id=17]
+[ext_resource path="res://img/HUD/ampulheta4.png" type="Texture" id=18]
+[ext_resource path="res://img/HUD/ampulheta5.png" type="Texture" id=19]
+[ext_resource path="res://img/HUD/ampulheta2.png" type="Texture" id=20]
+[ext_resource path="res://img/HUD/ampulheta7-5.png" type="Texture" id=21]
+[ext_resource path="res://img/complementar/SCORE.png" type="Texture" id=22]
+[ext_resource path="res://img/HUD/ampulheta8-5.png" type="Texture" id=23]
+[ext_resource path="res://img/HUD/vida00.png" type="Texture" id=24]
+[ext_resource path="res://song/fase 1.wav" type="AudioStream" id=25]
+[ext_resource path="res://song/bullet_whizzing_by-Mike_Koenig-2005433595.wav" type="AudioStream" id=26]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 15 ), ExtResource( 20 ), ExtResource( 8 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 14 ), ExtResource( 17 ), ExtResource( 21 ), ExtResource( 16 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.51
+} ]
+
+[node name="asteroids" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="bg" type="Sprite" parent="."]
+position = Vector2( 512.706, 300.248 )
+scale = Vector2( 1.48398, 1.48953 )
+texture = ExtResource( 4 )
+
+[node name="player" parent="." instance=ExtResource( 1 )]
+
+[node name="tiro" type="AudioStreamPlayer" parent="player"]
+stream = ExtResource( 26 )
+volume_db = -20.0
+
+[node name="gbSpawner " parent="." instance=ExtResource( 2 )]
+position = Vector2( 512, 300 )
+
+[node name="vdSpawner" parent="." instance=ExtResource( 3 )]
+
+[node name="contador" type="Label" parent="."]
+margin_left = 246.744
+margin_top = 66.7497
+margin_right = 281.744
+margin_bottom = 80.7497
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="contGlob" type="Label" parent="."]
+margin_left = 174.0
+margin_top = 67.0
+margin_right = 210.0
+margin_bottom = 81.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GlobuloHUD" type="Sprite" parent="contGlob"]
+position = Vector2( -21.5625, 5.62498 )
+texture = ExtResource( 7 )
+
+[node name="pontos" type="Label" parent="."]
+margin_left = 892.582
+margin_top = 67.1322
+margin_right = 932.582
+margin_bottom = 81.1323
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SCORE" type="Sprite" parent="pontos"]
+position = Vector2( -88.138, 6.13138 )
+scale = Vector2( 2.45408, 2.45408 )
+texture = ExtResource( 22 )
+
+[node name="AmpulhetaHUD" type="AnimatedSprite" parent="."]
+position = Vector2( 226.265, 73.178 )
+scale = Vector2( 0.844616, 0.844616 )
+frames = SubResource( 1 )
+frame = 5
+playing = true
+
+[node name="Vida20" type="Sprite" parent="."]
+visible = false
+position = Vector2( 83.6775, 72.8425 )
+texture = ExtResource( 12 )
+script = ExtResource( 13 )
+
+[node name="Vida40" type="Sprite" parent="."]
+visible = false
+position = Vector2( 83.6775, 72.8425 )
+texture = ExtResource( 9 )
+script = ExtResource( 13 )
+
+[node name="Vida60" type="Sprite" parent="."]
+visible = false
+position = Vector2( 83.6775, 72.8425 )
+texture = ExtResource( 11 )
+script = ExtResource( 13 )
+
+[node name="Vida80" type="Sprite" parent="."]
+visible = false
+position = Vector2( 83.6775, 72.8425 )
+texture = ExtResource( 10 )
+script = ExtResource( 13 )
+
+[node name="Vida100" type="Sprite" parent="."]
+visible = false
+position = Vector2( 83.6775, 72.8425 )
+texture = ExtResource( 6 )
+script = ExtResource( 13 )
+
+[node name="vida00" type="Sprite" parent="."]
+visible = false
+position = Vector2( 83.677, 72.842 )
+texture = ExtResource( 24 )
+
+[node name="musica_fundo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 25 )
+volume_db = -20.0
+[connection signal="hide" from="Vida100" to="." method="_on_Vida100_hide"]
+[connection signal="ready" from="Vida100" to="Vida100" method="_on_Vida100_ready"]
+[connection signal="visibility_changed" from="Vida100" to="." method="_on_Vida100_visibility_changed"]

@@ -1,0 +1,201 @@
+[gd_scene load_steps=35 format=2]
+
+[ext_resource path="res://scripts/HUDrunner.gd" type="Script" id=1]
+[ext_resource path="res://img/runner/globulonaro/dialogBoxGlobulonaroFrase1.png" type="Texture" id=2]
+[ext_resource path="res://img/runner/globulonaro/DBGlobulonaroFrase6.png" type="Texture" id=3]
+[ext_resource path="res://img/runner/globulonaro/DBGlobulonaroFrase4.png" type="Texture" id=4]
+[ext_resource path="res://img/runner/globulonaro/DBGlobulonaroFrase9.png" type="Texture" id=5]
+[ext_resource path="res://img/runner/globulonaro/DBGlobulonaroFrase2.png" type="Texture" id=6]
+[ext_resource path="res://img/runner/globulonaro/DBGlobulonaroFrase11.png" type="Texture" id=7]
+[ext_resource path="res://img/runner/globulonaro/DBGlobulonaroFrase7.png" type="Texture" id=8]
+[ext_resource path="res://img/runner/globulonaro/DBGlobulonaroFrase10.png" type="Texture" id=9]
+[ext_resource path="res://img/runner/globulonaro/DBGlobulonaroFrase8.png" type="Texture" id=10]
+[ext_resource path="res://img/runner/globulonaro/DBGlobulonaroFrase3.png" type="Texture" id=11]
+[ext_resource path="res://img/runner/globulonaro/DBGlobulonaroFrase12.png" type="Texture" id=12]
+[ext_resource path="res://img/runner/globulonaro/DBGlobulonaroFrase5.png" type="Texture" id=13]
+[ext_resource path="res://img/runner/globulonaro/DBGlobulonaroFrase13.png" type="Texture" id=14]
+[ext_resource path="res://img/runner/globulonaro/DBGlobulonaroFrase14.png" type="Texture" id=15]
+[ext_resource path="res://img/runner/globulonaro/DBGlobulonaroFrase15.png" type="Texture" id=16]
+[ext_resource path="res://img/asteroids/HUD/Vida80.png" type="Texture" id=17]
+[ext_resource path="res://img/asteroids/HUD/Vida100.png" type="Texture" id=18]
+[ext_resource path="res://img/asteroids/HUD/Vida60.png" type="Texture" id=19]
+[ext_resource path="res://img/asteroids/HUD/Vida20.png" type="Texture" id=20]
+[ext_resource path="res://img/asteroids/HUD/Vida40.png" type="Texture" id=21]
+[ext_resource path="res://img/HUD/vida00.png" type="Texture" id=22]
+[ext_resource path="res://img/HUD/ampulheta1.png" type="Texture" id=23]
+[ext_resource path="res://img/HUD/ampulheta2.png" type="Texture" id=24]
+[ext_resource path="res://img/HUD/ampulheta6.png" type="Texture" id=25]
+[ext_resource path="res://img/HUD/ampulheta4.png" type="Texture" id=26]
+[ext_resource path="res://img/HUD/ampulheta8-5.png" type="Texture" id=27]
+[ext_resource path="res://img/HUD/ampulheta3.png" type="Texture" id=28]
+[ext_resource path="res://img/HUD/ampulheta5.png" type="Texture" id=29]
+[ext_resource path="res://img/HUD/ampulheta8.png" type="Texture" id=30]
+[ext_resource path="res://img/HUD/ampulheta7.png" type="Texture" id=31]
+[ext_resource path="res://img/HUD/ampulheta7-5.png" type="Texture" id=32]
+[ext_resource path="res://img/complementar/SCORE.png" type="Texture" id=33]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 28 ), ExtResource( 26 ), ExtResource( 29 ), ExtResource( 25 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 30 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "idle",
+"speed": 8.51
+} ]
+
+[node name="Node2D" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="ampulheta" type="AnimatedSprite" parent="."]
+position = Vector2( 219.273, 81.2321 )
+frames = SubResource( 1 )
+animation = "idle"
+
+[node name="SCORE" type="Sprite" parent="."]
+position = Vector2( 491.458, 80.7463 )
+scale = Vector2( 2.39668, 2.39668 )
+texture = ExtResource( 33 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_left = 256.445
+margin_top = 61.9898
+margin_right = 935.445
+margin_bottom = 101.99
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelTimer" type="Label" parent="MarginContainer"]
+margin_top = 13.0
+margin_right = 679.0
+margin_bottom = 27.0
+text = "oi"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelScore" type="Label" parent="MarginContainer"]
+margin_top = 13.0
+margin_right = 679.0
+margin_bottom = 27.0
+text = "0"
+align = 1
+
+[node name="DBGlobulonaroFrase1" type="Sprite" parent="."]
+visible = false
+position = Vector2( 510.8, 529.054 )
+scale = Vector2( 5.09889, 4.01618 )
+texture = ExtResource( 2 )
+
+[node name="DBGlobulonaroFrase2" type="Sprite" parent="."]
+visible = false
+position = Vector2( 510.8, 529.054 )
+scale = Vector2( 5.09889, 4.01618 )
+texture = ExtResource( 6 )
+
+[node name="DBGlobulonaroFrase3" type="Sprite" parent="."]
+visible = false
+position = Vector2( 510.8, 529.054 )
+scale = Vector2( 5.09889, 4.01618 )
+texture = ExtResource( 11 )
+
+[node name="DBGlobulonaroFrase4" type="Sprite" parent="."]
+visible = false
+position = Vector2( 510.8, 529.054 )
+scale = Vector2( 5.09889, 4.01618 )
+texture = ExtResource( 4 )
+
+[node name="DBGlobulonaroFrase5" type="Sprite" parent="."]
+visible = false
+position = Vector2( 510.8, 529.054 )
+scale = Vector2( 5.09889, 4.01618 )
+texture = ExtResource( 13 )
+
+[node name="DBGlobulonaroFrase6" type="Sprite" parent="."]
+visible = false
+position = Vector2( 510.8, 529.054 )
+scale = Vector2( 5.09889, 4.01618 )
+texture = ExtResource( 3 )
+
+[node name="DBGlobulonaroFrase7" type="Sprite" parent="."]
+visible = false
+position = Vector2( 510.8, 529.054 )
+scale = Vector2( 5.09889, 4.01618 )
+texture = ExtResource( 8 )
+
+[node name="DBGlobulonaroFrase8" type="Sprite" parent="."]
+visible = false
+position = Vector2( 510.8, 529.054 )
+scale = Vector2( 5.09889, 4.01618 )
+texture = ExtResource( 10 )
+
+[node name="DBGlobulonaroFrase9" type="Sprite" parent="."]
+visible = false
+position = Vector2( 510.8, 529.054 )
+scale = Vector2( 5.09889, 4.01618 )
+texture = ExtResource( 5 )
+
+[node name="DBGlobulonaroFrase10" type="Sprite" parent="."]
+visible = false
+position = Vector2( 510.8, 529.054 )
+scale = Vector2( 5.09889, 4.01618 )
+texture = ExtResource( 9 )
+
+[node name="DBGlobulonaroFrase11" type="Sprite" parent="."]
+visible = false
+position = Vector2( 510.8, 529.054 )
+scale = Vector2( 5.09889, 4.01618 )
+texture = ExtResource( 7 )
+
+[node name="DBGlobulonaroFrase12" type="Sprite" parent="."]
+visible = false
+position = Vector2( 510.8, 529.054 )
+scale = Vector2( 5.09889, 4.01618 )
+texture = ExtResource( 12 )
+
+[node name="DBGlobulonaroFrase13" type="Sprite" parent="."]
+visible = false
+position = Vector2( 510.8, 529.054 )
+scale = Vector2( 5.09889, 4.01618 )
+texture = ExtResource( 14 )
+
+[node name="DBGlobulonaroFrase14" type="Sprite" parent="."]
+visible = false
+position = Vector2( 510.8, 529.054 )
+scale = Vector2( 5.09889, 4.01618 )
+texture = ExtResource( 15 )
+
+[node name="DBGlobulonaroFrase15" type="Sprite" parent="."]
+visible = false
+position = Vector2( 510.8, 529.054 )
+scale = Vector2( 5.09889, 4.01618 )
+texture = ExtResource( 16 )
+
+[node name="vida100" type="Sprite" parent="."]
+visible = false
+position = Vector2( 81.6871, 82.0205 )
+texture = ExtResource( 18 )
+
+[node name="vida80" type="Sprite" parent="."]
+visible = false
+position = Vector2( 61.8009, 88.9331 )
+texture = ExtResource( 17 )
+
+[node name="vida60" type="Sprite" parent="."]
+visible = false
+position = Vector2( 61.8009, 88.9331 )
+texture = ExtResource( 19 )
+
+[node name="vida40" type="Sprite" parent="."]
+visible = false
+position = Vector2( 61.8009, 88.9331 )
+texture = ExtResource( 21 )
+
+[node name="vida20" type="Sprite" parent="."]
+visible = false
+position = Vector2( 61.8009, 88.9331 )
+texture = ExtResource( 20 )
+
+[node name="vida00" type="Sprite" parent="."]
+visible = false
+position = Vector2( 61.8009, 88.9331 )
+texture = ExtResource( 22 )

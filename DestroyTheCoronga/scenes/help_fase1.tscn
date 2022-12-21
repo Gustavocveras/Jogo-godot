@@ -1,0 +1,232 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://img/complementar/barra.png" type="Texture" id=1]
+[ext_resource path="res://fontes/ARCADECLASSIC.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://img/complementar/right.png" type="Texture" id=3]
+[ext_resource path="res://img/complementar/up.png" type="Texture" id=4]
+[ext_resource path="res://img/complementar/left.png" type="Texture" id=5]
+[ext_resource path="res://img/complementar/ZorX.png" type="Texture" id=6]
+[ext_resource path="res://img/sprites/virusDesfarçado.png" type="Texture" id=7]
+[ext_resource path="res://img/sprites/globuloBranco.png" type="Texture" id=8]
+[ext_resource path="res://scripts/help_fase1.gd" type="Script" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 2 )
+
+[node name="fase1_help" type="Node2D"]
+scale = Vector2( 1.00261, 0.99699 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 45.0409, 557.008 ],
+"_edit_vertical_guides_": [ 325.186, 675.091, 149.619, 500.752, 850.657 ]
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -74.1247
+margin_top = -35.0758
+margin_right = 1052.87
+margin_bottom = 627.924
+color = Color( 0.0509804, 0.00784314, 0.0705882, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="barra" type="Sprite" parent="."]
+position = Vector2( 488.475, 323.737 )
+scale = Vector2( 5.78818, 5.78818 )
+texture = ExtResource( 1 )
+
+[node name="barra2" type="Sprite" parent="."]
+position = Vector2( 837.217, 323.505 )
+scale = Vector2( 5.78818, 5.78818 )
+texture = ExtResource( 1 )
+
+[node name="movimentacao" type="Label" parent="."]
+margin_left = 48.0
+margin_top = 1.0
+margin_right = 250.0
+margin_bottom = 44.0
+custom_fonts/font = SubResource( 1 )
+text = "controles"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="personagens" type="Label" parent="."]
+margin_left = 399.0
+margin_top = -5.45547
+margin_right = 602.0
+margin_bottom = 47.5445
+rect_scale = Vector2( 0.969389, 0.928551 )
+custom_fonts/font = SubResource( 1 )
+text = "Personagens"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="objetivo" type="Label" parent="."]
+margin_left = 749.0
+margin_top = 7.0
+margin_right = 952.0
+margin_bottom = 46.0
+rect_scale = Vector2( 1, 0.951205 )
+custom_fonts/font = SubResource( 1 )
+text = "objetivo"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="up" type="Sprite" parent="."]
+position = Vector2( 81.3204, 120.627 )
+scale = Vector2( 2.14031, 1.86881 )
+texture = ExtResource( 4 )
+
+[node name="frente_up" type="Label" parent="."]
+margin_left = 159.819
+margin_top = 64.1699
+margin_right = 294.819
+margin_bottom = 104.17
+text = "Move o personagem
+para a frente"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="right" type="Sprite" parent="."]
+position = Vector2( 81.7277, 241.342 )
+scale = Vector2( 1.9842, 1.9842 )
+texture = ExtResource( 3 )
+
+[node name="frente_right" type="Label" parent="."]
+margin_left = 174.962
+margin_top = 178.266
+margin_right = 277.962
+margin_bottom = 226.266
+text = "Vira a frente do
+personagem pra
+ direita"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="left" type="Sprite" parent="."]
+position = Vector2( 80.0986, 383.789 )
+scale = Vector2( 2.13352, 2.13352 )
+texture = ExtResource( 5 )
+
+[node name="frente_left" type="Label" parent="."]
+margin_left = 170.799
+margin_top = 318.57
+margin_right = 273.799
+margin_bottom = 366.57
+text = "Vira a frente do
+personagem pra
+esquerda"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ZorX" type="Sprite" parent="."]
+position = Vector2( 47.5806, 540.284 )
+scale = Vector2( 2.27606, 2.27606 )
+texture = ExtResource( 6 )
+
+[node name="frente_ZorX" type="Label" parent="."]
+margin_left = 178.083
+margin_top = 468.215
+margin_right = 263.083
+margin_bottom = 502.215
+text = "Disparos"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="virusDesfarçado" type="Sprite" parent="."]
+position = Vector2( 499.985, 161.646 )
+scale = Vector2( 0.679172, 0.646031 )
+texture = ExtResource( 7 )
+
+[node name="frente_virusdesfarcado" type="Label" parent="."]
+margin_left = 414.468
+margin_top = 206.856
+margin_right = 591.468
+margin_bottom = 270.856
+text = "Esse Virus desfarçado da 
+pontos ao ser destruido
+e dano ao tocar nele"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="globuloBranco" type="Sprite" parent="."]
+position = Vector2( 496.161, 339.154 )
+scale = Vector2( 2.70277, 2.70277 )
+texture = ExtResource( 8 )
+
+[node name="frente_globulobranco" type="Label" parent="."]
+margin_left = 422.814
+margin_top = 433.692
+margin_right = 594.814
+margin_bottom = 515.692
+text = "Esse globulo branco
+é amistoso não o mate,
+pois o chefão ficara mais
+forte a cada globulo morto.
+Dica: NAO ENCOSTE NELE"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="frente_objetivo" type="Label" parent="."]
+margin_left = 701.898
+margin_top = 94.0197
+margin_right = 993.898
+margin_bottom = 425.02
+text = "O objetivo principal dessa fase é
+destruir o maior numero de virus desfarçados
+e destruir o menor numero POSSIVEL de
+globulos brancos"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 460.0
+margin_top = 563.0
+margin_right = 538.0
+margin_bottom = 591.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 2 )
+enabled_focus_mode = 0
+text = "voltar"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

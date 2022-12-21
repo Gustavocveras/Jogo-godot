@@ -1,0 +1,134 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://fontes/ARCADECLASSIC.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://img/complementar/fase1.PNG" type="Texture" id=2]
+[ext_resource path="res://img/complementar/fase2.PNG" type="Texture" id=3]
+[ext_resource path="res://img/complementar/fase3.PNG" type="Texture" id=4]
+[ext_resource path="res://scripts/help.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 20
+font_data = ExtResource( 1 )
+
+[node name="help" type="Node2D"]
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 188.229, 426.295, 446.684, 482.474 ],
+"_edit_vertical_guides_": [ 515.836, 209.752, 808.317, 77.7958, 340.348, 396.123, 635.549, 692.685, 932.111 ]
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -40.2136
+margin_top = -34.8972
+margin_right = 1081.79
+margin_bottom = 622.103
+color = Color( 0.0509804, 0.00784314, 0.0705882, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="titulo" type="Label" parent="."]
+margin_right = 1024.0
+margin_bottom = 108.0
+custom_fonts/font = SubResource( 1 )
+text = "ajuda"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fase1" type="Sprite" parent="."]
+position = Vector2( 208.454, 308.087 )
+scale = Vector2( 0.254239, 0.395351 )
+texture = ExtResource( 2 )
+
+[node name="fase2" type="Sprite" parent="."]
+position = Vector2( 515.562, 306.67 )
+scale = Vector2( 0.230105, 0.400397 )
+texture = ExtResource( 3 )
+
+[node name="fase3" type="Sprite" parent="."]
+position = Vector2( 812.526, 307.218 )
+scale = Vector2( 0.230105, 0.400397 )
+texture = ExtResource( 4 )
+
+[node name="Button1" type="Button" parent="."]
+margin_left = 144.0
+margin_top = 442.0
+margin_right = 278.0
+margin_bottom = 488.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 2 )
+enabled_focus_mode = 0
+text = "Fase 1"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 468.0
+margin_top = 443.0
+margin_right = 565.0
+margin_bottom = 487.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 3 )
+enabled_focus_mode = 0
+text = "Fase 2"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="."]
+margin_left = 760.134
+margin_top = 445.468
+margin_right = 857.134
+margin_bottom = 482.468
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 4 )
+enabled_focus_mode = 0
+text = "Fase 3"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button4" type="Button" parent="."]
+margin_left = 468.0
+margin_top = 538.0
+margin_right = 565.0
+margin_bottom = 576.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 5 )
+enabled_focus_mode = 0
+text = "voltar"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Button1" to="." method="_on_Button1_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_Button4_pressed"]
